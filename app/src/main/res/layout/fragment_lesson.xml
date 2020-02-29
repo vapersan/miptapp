@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:text="1"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:textSize="15sp"
+                android:layout_marginStart="20dp"
+                android:text="Русский язык\n8:45-10:15" />
+            <TextView
+                android:layout_marginStart="50dp"
+                android:text="Стоколос\nкор 2 285"
+                />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

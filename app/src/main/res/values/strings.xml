@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">MFTI_App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Main</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <!--Информация о пользователе-->
+    <string name="general">Основная информация</string>
+    <string name="SNP">ФИО: </string>
+    <string name="birthday">День\nрождения: </string>
+    <string name="passport">Паспорт: </string>
+    <string name="snils">СНИЛС: </string>
+
+    <string name="contacts">Контакты</string>
+    <string name="email">E-mail: </string>
+    <string name="phone">Телефон: </string>
+    <string name="address_doc">Адрес по\nпрописке физ. лица: </string>
+    <string name="address_real">Адрес проживания\nфиз. лица: </string>
+
+    <string name="study">Обучение</string>
+    <string name="level_of_study">Уровень обучения</string>
+    <string name="status">Статус</string>
+    <string name="period_of_study">Период обучения</string>
+    <string name="faculty">Факультет</string>
+    <string name="curse">Курс</string>
+    <string name="group">Группа</string>
+    <string name="base_department">Базовая кафедра</string>
+    <string name="study_form">Форма обучения</string>
+    <string name="source_of_investment">Источник финансирования</string>
+
+    <string name="work">Трудовая деятельность</string>
+
+    <string name="family">Семья</string>
+    <string name="father">Отец</string>
+    <string name="mother">Мать</string>
+    <string name="sister">Сестра</string>
+    <string name="brother">Брат</string>
+
+    <!--Учебный процесс-->
+    <string name="avarage_score">Средний балл: </string>
+    <string name="rating_by_course">Рейтинг по курсу: </string>
+    <string name="rating_by_fsh">Рейтинг по ФШ: </string>
+    <string name="home_second">Home Second</string>
+    <string name="standart">\???</string>
+
+
+    <string name="edit">Изменить</string>
+</resources>

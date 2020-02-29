@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/avarage_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/avarage_score"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/avarage_score_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/Grey"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="50"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rating_by_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/avarage_score"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="13dp"
+            android:text="@string/rating_by_course"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rating_by_course_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/avarage_score_number"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/Grey"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="50"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rating_by_fsh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rating_by_course"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="13dp"
+            android:text="@string/rating_by_fsh"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rating_by_fsh_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rating_by_course_number"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/Grey"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="50"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rating_by_fsh"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="13dp"
+            android:text="Статус: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/status_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rating_by_fsh_number"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/status_study"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="Учится"
+            android:textColor="#008000"
+            android:textSize="20sp" />
+
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/status"
+            android:layout_marginTop="10dp"
+            android:background="@color/Grey" />
+
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/level_edu"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="13dp"
+                    android:text="Уровень образования"
+                    android:textSize="20sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="162dp"
+                    android:paddingEnd="1dp">
+
+                    <TextView
+                        android:id="@+id/level_edu_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/level_edu6"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Курс"
+                    android:textSize="20sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="162dp"
+                    android:paddingEnd="1dp">
+
+                    <TextView
+                        android:id="@+id/level_edu_status6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/level_edu7"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Подразделение"
+                    android:textSize="20sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="162dp"
+                    android:paddingEnd="1dp">
+
+                    <TextView
+                        android:id="@+id/level_edu_status7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/level_edu8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Группа"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="162dp"
+                    android:paddingEnd="1dp">
+
+                    <TextView
+                        android:id="@+id/level_edu_status8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/level_edu9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Направление"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="162dp"
+                    android:paddingEnd="1dp">
+
+                    <TextView
+                        android:id="@+id/level_edu_status9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/level_edu10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Программа"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="162dp"
+                    android:paddingEnd="1dp">
+
+                    <TextView
+                        android:id="@+id/level_edu_status10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="20dp"
+                        android:minLines="1"
+                        android:text="@string/standart"
+                        android:textSize="20sp"
+                        app:autoSizeMaxTextSize="20sp"
+                        app:autoSizeMinTextSize="1sp"
+                        app:autoSizeStepGranularity="2sp"
+                        app:autoSizeTextType="uniform" />
+                </HorizontalScrollView>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/level_edu11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Форма оплаты обучения"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="162dp"
+                    android:paddingEnd="1dp">
+
+                    <TextView
+                        android:id="@+id/level_edu_status11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/programms"
+            android:layout_marginTop="10dp"
+            android:background="@color/Grey" />
+
+        <TextView
+            android:id="@+id/programms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Рабочие учебные программы"
+            android:layout_below="@id/table"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/nir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="НИР"
+            android:layout_below="@id/programms"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"/>
+
+        <TableLayout
+            android:layout_below="@id/nir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="20dp"
+                    android:minLines="1"
+                    android:textStyle="bold"
+                    android:text="Базовая кафедра"
+                    android:textSize="20sp"
+                    app:autoSizeMaxTextSize="20sp"
+                    app:autoSizeMinTextSize="1sp"
+                    app:autoSizeStepGranularity="2sp"
+                    app:autoSizeTextType="uniform" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="20dp"
+                    android:textStyle="bold"
+                    android:minLines="1"
+                    android:text="Научный руководитель"
+                    android:textSize="20sp"
+                    app:autoSizeMaxTextSize="20sp"
+                    app:autoSizeMinTextSize="1sp"
+                    app:autoSizeStepGranularity="2sp"
+                    app:autoSizeTextType="uniform" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="20dp"
+                    android:minLines="1"
+                    android:textStyle="bold"
+                    android:text="Тема дипломной работы"
+                    android:textSize="20sp"
+                    app:autoSizeMaxTextSize="20sp"
+                    app:autoSizeMinTextSize="1sp"
+                    app:autoSizeStepGranularity="2sp"
+                    app:autoSizeTextType="uniform" />
+            </TableRow>
+        </TableLayout>
+
+    </RelativeLayout>
+</ScrollView>
