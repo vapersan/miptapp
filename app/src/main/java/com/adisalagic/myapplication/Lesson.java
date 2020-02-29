@@ -78,7 +78,7 @@ public class Lesson {
 	public TableRow toTableRow(Context v){
 		TableRow tableRow = new TableRow(v);
 		TextView textView = new TextView(tableRow.getContext());
-		textView.setText(id);
+		textView.setText(id + "");
 		RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		layoutParams.setMarginStart(10);
 		textView.setTextSize(15);
@@ -104,6 +104,10 @@ public class Lesson {
 
 	public static Lesson[] createLessons(Lesson... args){
 		ArrayList<Lesson> lessons = new ArrayList<>(Arrays.asList(args));
-		return (Lesson[]) lessons.toArray();
+		Lesson[] lessons1 = new Lesson[lessons.size()];
+		for (int i = 0; i < lessons.size(); i++) {
+			lessons1[i] = lessons.get(i);
+		}
+		return lessons1;
 	}
 }
