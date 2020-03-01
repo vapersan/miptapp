@@ -1,6 +1,7 @@
 package com.adisalagic.myapplication;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
@@ -116,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
 				if (personalData[0] != null) {
 					bitmap = UserInfo.getBitmapFromURL(personalData[0].getImageUrl());
 					bitmap = Bitmap.createBitmap(bitmap, 0, 0, 150, 150);
+				}else {
+					return;
 				}
 				final Bitmap finalBitmap = bitmap;
 				navigationView.getHeaderView(0).post(new Runnable() {
@@ -145,7 +148,8 @@ public class MainActivity extends AppCompatActivity {
 //				R.id.nav_gallery,
 //				R.id.nav_slideshow,
 				R.id.nav_table_view,
-				R.id.nav_resend_view
+				R.id.nav_resend_view,
+				R.id.nav_loss_or_disable_pass
 		)
 				.setDrawerLayout(drawer)
 				.build();
@@ -174,6 +178,20 @@ public class MainActivity extends AppCompatActivity {
 		finish();
 		startActivity(intent);
 	}
+
+	public void onButtonClicked(View view) {
+		android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(view.getContext());
+		builder.setMessage("Вы действительно хотите продолжить?");
+		builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+		builder.setPositiveButton("Да", null);
+		builder.create().show();
+	}
+
 
 
 }

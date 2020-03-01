@@ -59,6 +59,9 @@ public class UserInfo extends Activity {
 			@Override
 			public void run() {
 				data[0] = getData();
+				if (data[0] == null){
+					return;
+				}
 				bitmap[0] = getBitmapFromURL(data[0].getImageUrl());
 				SNP.post(new Runnable() {
 					@Override

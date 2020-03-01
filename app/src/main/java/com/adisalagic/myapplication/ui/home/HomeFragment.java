@@ -64,6 +64,9 @@ public class HomeFragment extends Fragment {
 			@Override
 			public void run() {
 				mainData[0] = getMainData();
+				if (mainData[0] == null){
+					return;
+				}
 				Log.i("ASYNK", "Выполняюсь");
 				status.post(new Runnable() {
 					@Override

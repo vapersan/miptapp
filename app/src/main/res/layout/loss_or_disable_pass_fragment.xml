@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoDP.LossOrDisablePass">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/pFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="В случае утери/поломки электронной карты доступа (ЭКД) подайте электронную заявку на блокировку (кнопка 'Заблокировать ЭКД')."
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/pSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pFirst"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Внимание! Если Вы являетесь выпускником МФТИ или хотите перевыпустить ЭКД в связи со сменой ФИО, обратитесь в Бюро пропусков лично. Форму ниже заполнять не нужно!"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/pThird"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pSecond"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Для перевыпуска новой ЭКД необходимо оплатить 100 руб."
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/pFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pThird"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Вы можете оплатить онлайн после блокировки либо в кассе МФТИ АК214, 2 этаж (пн-пт, c 14:00 до 17:30)."
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/pFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pFour"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="После подачи заявки на блокировку и оплаты обратитесь в Бюро пропусков (НК 1 этаж) для получения новой ЭКД."
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/pFive"
+            android:layout_marginTop="15dp"
+            android:background="@color/Grey" />
+
+        <TextView
+            android:id="@+id/pSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pFive"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Прошу заблокировать мне электронную карту доступа (ЭКД) в связи с утерей/поломкой."
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pSeven"
+            android:paddingStart="10dp"
+            android:text="Плахов Игорь Александрович"
+            android:enabled="false" />
+
+        <TextView
+            android:id="@+id/pSeven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pSix"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/SNP"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pEight"
+            android:text="20.12.2001"
+            android:paddingStart="10dp"
+            android:enabled="false" />
+
+        <TextView
+            android:id="@+id/pEight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editOne"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/birthday"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editThird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="abc123@gmail.com"
+            android:layout_below="@id/pNine"
+
+            android:paddingStart="10dp"
+            android:enabled="false"
+            />
+
+        <TextView
+            android:id="@+id/pNine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTwo"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/email"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pTen"
+            android:text="88005553535"
+            android:paddingStart="10dp"
+            android:enabled="false"
+            />
+
+        <TextView
+            android:id="@+id/pTen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editThird"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/phone"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+        
+        <Button
+            android:id="@+id/smrt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editFour"
+            android:text="Заблокировать ЭКД"
+            android:background="@color/red"
+
+            android:onClick="onButtonClicked"
+            android:textColor="#FFF"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>

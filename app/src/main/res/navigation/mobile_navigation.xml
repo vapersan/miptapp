@@ -50,5 +50,10 @@
         android:name="com.adisalagic.myapplication.ui.slideshow.TableView"
         android:label="TableView">
     </activity>
+    <fragment
+        android:id="@+id/nav_loss_or_disable_pass"
+        android:name="com.adisalagic.myapplication.LoDP.LossOrDisablePass"
+        android:label="@string/restore"
+        tools:layout="@layout/loss_or_disable_pass_fragment" />
 
 </navigation>
