@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_feedback"
+        android:textSize="25sp"
+        android:layout_marginStart="40dp"
+        />
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:ems="10"
+        android:layout_below="@id/header"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:importantForAutofill="no" />
+    <Button
+        android:id="@+id/sender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:text="@string/send" />
+</RelativeLayout>

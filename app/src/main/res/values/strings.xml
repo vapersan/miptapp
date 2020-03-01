@@ -52,4 +52,6 @@
 
 
     <string name="edit">Изменить</string>
+    <string name="send">Отправить</string>
+    <string name="send_feedback">Отправить обратную связь</string>
 </resources>

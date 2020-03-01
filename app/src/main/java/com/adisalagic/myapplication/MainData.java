@@ -4,6 +4,23 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class MainData {
+	@SerializedName("Средний балл")
+	@Expose
+	private double avarageScore;
+
+
+	@SerializedName("Рейтинг по курсу")
+	@Expose
+	private int ratingByCourse;
+
+	@SerializedName("Рейтинг по ФШ")
+	@Expose
+	private int ratingByFsh;
+
+	@SerializedName("Статус")
+	@Expose
+	private String status;
+
 	@SerializedName("Уровень образования")
 	@Expose
 	private String eduLevel;
@@ -122,5 +139,37 @@ public class MainData {
 
 	public void setThemeOfDiplome(String themeOfDiplome) {
 		this.themeOfDiplome = themeOfDiplome;
+	}
+
+	public double getAvarageScore() {
+		return avarageScore;
+	}
+
+	public void setAvarageScore(double avarageScore) {
+		this.avarageScore = avarageScore;
+	}
+
+	public int getRatingByCourse() {
+		return ratingByCourse;
+	}
+
+	public void setRatingByCourse(int ratingByCourse) {
+		this.ratingByCourse = ratingByCourse;
+	}
+
+	public int getRatingByFsh() {
+		return ratingByFsh;
+	}
+
+	public void setRatingByFsh(int ratingByFsh) {
+		this.ratingByFsh = ratingByFsh;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }

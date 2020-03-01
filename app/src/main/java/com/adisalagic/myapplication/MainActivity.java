@@ -1,11 +1,14 @@
 package com.adisalagic.myapplication;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.itkacher.okhttpprofiler.OkHttpProfilerInterceptor;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -24,15 +28,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import okhttp3.FormBody;
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
 	private AppBarConfiguration mAppBarConfiguration;
-
 
 
 	@Override
@@ -43,13 +49,47 @@ public class MainActivity extends AppCompatActivity {
 		Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 		FloatingActionButton fab = findViewById(R.id.fab);
-		fab.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-						.setAction("Action", null).show();
-			}
-		});
+//		fab.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View view) {
+//				AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+//				View                dView   = getLayoutInflater().inflate(R.layout.dialog_feedback, null, false);
+//				builder.setView(dView);
+//				Button         button   = dView.findViewById(R.id.sender);
+//				final EditText editText = dView.findViewById(R.id.text);
+//				final Dialog   dialog   = builder.create();
+//				button.setOnClickListener(new View.OnClickListener() {
+//					@Override
+//					public void onClick(final View v) {
+//						AsyncTask.execute(new Runnable() {
+//							@Override
+//							public void run() {
+//								OkHttpClient client = new OkHttpClient();
+//								RequestBody body = new MultipartBody.Builder()
+//										.addFormDataPart("text", editText.getText().toString())
+//										.build();
+//								Request request = new Request.Builder()
+//										.url("https://dragonica-mercy.online/api/feedback")
+//										.post(body)
+//										.build();
+//								try {
+//									Response response = client.newCall(request).execute();
+//									if (response.code() == 200) {
+//										Snackbar.make(v.getRootView(), "Успешно", Snackbar.LENGTH_LONG);
+//									}else {
+//										Snackbar.make(v.getRootView(), "Неудача!", Snackbar.LENGTH_LONG);
+//									}
+//									dialog.dismiss();
+//								} catch (Exception e) {
+//								}
+//							}
+//						});
+//
+//					}
+//				});
+//				dialog.show();
+//			}
+//		});
 		DrawerLayout   drawer         = findViewById(R.id.drawer_layout);
 		NavigationView navigationView = findViewById(R.id.nav_view);
 		navigationView.getHeaderView(0).setOnClickListener(new View.OnClickListener() {
@@ -92,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
 		finish();
 		startActivity(intent);
 	}
-
 
 
 }

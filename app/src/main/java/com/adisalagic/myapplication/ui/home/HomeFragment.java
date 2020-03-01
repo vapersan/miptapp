@@ -86,7 +86,9 @@ public class HomeFragment extends Fragment {
 		try {
 			Response response = client.newCall(request).execute();
 			response.code();
-			return new Gson().fromJson(response.body().string(), MainData.class);
+			String result = response.body().string();
+			Log.i("ASYNK", result);
+			return new Gson().fromJson(result, MainData.class);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -101,5 +103,9 @@ public class HomeFragment extends Fragment {
 		diraction.setText(mainData.getDiraction());
 		programme.setText(mainData.getProgramme());
 		payForm.setText(mainData.getPayForm());
+		avarageScore.setText(mainData.getAvarageScore() + "");
+		ratingByCourse.setText(mainData.getRatingByCourse() + "");
+		ratingByFsh.setText(mainData.getRatingByFsh() + "");
+		status.setText(mainData.getStatus());
 	}
 }
