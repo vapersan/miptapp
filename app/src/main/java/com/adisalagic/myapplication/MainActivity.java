@@ -3,15 +3,18 @@ package com.adisalagic.myapplication;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.adisalagic.myapplication.ui.slideshow.TableView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
+import com.itkacher.okhttpprofiler.OkHttpProfilerInterceptor;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -30,41 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
 	private AppBarConfiguration mAppBarConfiguration;
 
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		View fragmentView = getLayoutInflater().inflate(R.layout.fragment_home, null, false);
-		final TextView avarageScore = fragmentView.findViewById(R.id.avarage_score_number),
-				ratingByCourse = fragmentView.findViewById(R.id.rating_by_course_number),
-				ratingByFsh = fragmentView.findViewById(R.id.rating_by_fsh_number),
-				status = fragmentView.findViewById(R.id.status_value),
-				levelEduValue = fragmentView.findViewById(R.id.level_edu_status),
-				course = fragmentView.findViewById(R.id.level_edu_status6),
-				podr = fragmentView.findViewById(R.id.level_edu_status7),
-				group = fragmentView.findViewById(R.id.level_edu_status8),
-				diraction = fragmentView.findViewById(R.id.level_edu_status9),
-				programme = fragmentView.findViewById(R.id.level_edu_status10),
-				payForm = fragmentView.findViewById(R.id.level_edu_status11);
-		final MainData[] mainData = {null};
-		AsyncTask.execute(new Runnable() {
-			@Override
-			public void run() {
-				mainData[0] = getMainData();
-				avarageScore.post(new Runnable() {
-					@Override
-					public void run() {
-						podr.setText(mainData[0].getPodr());
-						levelEduValue.setText(mainData[0].getEduLevel());
-						course.setText(mainData[0].getCourse());
-						group.setText(mainData[0].getGroup());
-						diraction.setText(mainData[0].getDiraction());
-						programme.setText(mainData[0].getProgramme());
-						payForm.setText(mainData[0].getPayForm());
-					}
-				});
-			}
-		});
+
 		Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 		FloatingActionButton fab = findViewById(R.id.fab);
@@ -120,16 +95,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-	public MainData getMainData(){
-		OkHttpClient client = new OkHttpClient();
-		Request request = new Request.Builder()
-				.url("https://dragonica-mercy.online/api_json_study/")
-				.build();
-
-		try (Response response = client.newCall(request).execute()) {
-			return new Gson().fromJson(response.body().string(), MainData.class);
-		} catch (Exception e) {
-		}
-		return null;
-	}
 }

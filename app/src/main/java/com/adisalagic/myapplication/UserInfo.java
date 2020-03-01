@@ -1,9 +1,12 @@
 package com.adisalagic.myapplication;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -11,6 +14,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.google.gson.Gson;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -28,18 +36,20 @@ public class UserInfo extends Activity {
 		super.onCreate(savedInstanceState);
 		View rootView = getLayoutInflater().inflate(R.layout.user_info, null);
 		setContentView(rootView);
-		final TextView SNP = findViewById(R.id.SNP_value),
-				birthday = findViewById(R.id.birthday_value),
-				passport = findViewById(R.id.passport_value),
-				SNILS = findViewById(R.id.snils_value),
-				email = findViewById(R.id.email_value),
-				phone = findViewById(R.id.phone_value),
-				addrDoc = findViewById(R.id.address_doc_value),
-				addrReal = findViewById(R.id.address_real_value);
-		TableLayout    tableWork = new TableLayout(rootView.getContext());
-		final TableRow tableRow  = new TableRow(tableWork.getContext());
-		final TextView stavka    = new TextView(tableRow.getContext());
-		TextView       stage     = new TextView(tableRow.getContext());
+		final TextView  SNP       = findViewById(R.id.SNP_value);
+		final TextView  birthday  = findViewById(R.id.birthday_value);
+		final TextView  passport  = findViewById(R.id.passport_value);
+		final TextView  SNILS     = findViewById(R.id.snils_value);
+		final TextView  email     = findViewById(R.id.email_value);
+		final TextView  phone     = findViewById(R.id.phone_value);
+		final TextView  addrDoc   = findViewById(R.id.address_doc_value);
+		final TextView  addrReal  = findViewById(R.id.address_real_value);
+		final Bitmap[]  bitmap    = new Bitmap[1];
+		final ImageView photo     = findViewById(R.id.photo);
+		TableLayout     tableWork = new TableLayout(rootView.getContext());
+		final TableRow  tableRow  = new TableRow(tableWork.getContext());
+		final TextView  stavka    = new TextView(tableRow.getContext());
+		TextView        stage     = new TextView(tableRow.getContext());
 		stavka.setText("Ставка: ");
 		stage.setText("Должность: ");
 		tableRow.addView(stage);
@@ -48,6 +58,7 @@ public class UserInfo extends Activity {
 			@Override
 			public void run() {
 				data[0] = getData();
+				bitmap[0] = getBitmapFromURL(data[0].getImageUrl());
 				SNP.post(new Runnable() {
 					@Override
 					public void run() {
@@ -65,7 +76,13 @@ public class UserInfo extends Activity {
 						stavka_value.setText(data[0].getWorkDevidents());
 						TableRow tableRow1 = new TableRow(tableRow.getContext());
 						tableRow1.addView(stavka);
-						tableRow1.addView(stageValue);
+						tableRow1.addView(stavka_value);
+
+
+						if (bitmap[0] != null) {
+							photo.setImageBitmap(bitmap[0]);
+						}
+
 					}
 				});
 			}
@@ -86,5 +103,20 @@ public class UserInfo extends Activity {
 		} catch (Exception e) {
 		}
 		return null;
+	}
+
+
+	public static Bitmap getBitmapFromURL(String src) {
+		try {
+			URL               url        = new URL(src);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+			connection.setDoInput(true);
+			connection.connect();
+			InputStream input = connection.getInputStream();
+			return BitmapFactory.decodeStream(input);
+		} catch (IOException e) {
+			// Log exception
+			return null;
+		}
 	}
 }
