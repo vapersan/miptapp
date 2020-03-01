@@ -3,326 +3,329 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-    <TextView
-        android:id="@+id/general"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/general"
-        android:textSize="25sp" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="33dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="13dp"
-        android:layout_toEndOf="@id/general"
-        android:enabled="false"
-        android:text="@string/edit"
-        android:textSize="12sp" />
+        <TextView
+            android:id="@+id/general"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/general"
+            android:textSize="25sp" />
 
-    <ImageView
-        android:id="@+id/photo"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:layout_below="@id/general"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:contentDescription="Image of persone"
-        android:src="@drawable/ic_do_not_disturb_black_24dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@id/general"
+            android:enabled="false"
+            android:text="@string/edit"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/general"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="Image of persone"
+            android:src="@drawable/ic_do_not_disturb_black_24dp" />
 
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/general"
-        android:layout_toEndOf="@id/photo">
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/general"
+            android:layout_toEndOf="@id/photo">
 
-        <TableRow>
-
-            <TextView
-                android:id="@+id/SNP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/SNP"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <HorizontalScrollView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
+            <TableRow>
 
                 <TextView
-                    android:id="@+id/SNP_value"
+                    android:id="@+id/SNP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/standart"
-                    android:textSize="20sp" />
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/SNP"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-            </HorizontalScrollView>
-        </TableRow>
+                <HorizontalScrollView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
 
-        <TableRow>
+                    <TextView
+                        android:id="@+id/SNP_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/birthday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/birthday"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                </HorizontalScrollView>
+            </TableRow>
 
-            <HorizontalScrollView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/birthday_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/standart"
-                    android:textSize="20sp" />
-            </HorizontalScrollView>
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/passport"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/passport"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <HorizontalScrollView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
+            <TableRow>
 
                 <TextView
-                    android:id="@+id/passport_value"
+                    android:id="@+id/birthday"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/standart"
-                    android:textSize="20sp" />
-            </HorizontalScrollView>
-        </TableRow>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/birthday"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        <TableRow>
+                <HorizontalScrollView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
 
-            <TextView
-                android:id="@+id/snils"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/snils"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/birthday_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
 
-            <HorizontalScrollView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
+            <TableRow>
 
                 <TextView
-                    android:id="@+id/snils_value"
+                    android:id="@+id/passport"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/standart"
-                    android:textSize="20sp" />
-            </HorizontalScrollView>
-        </TableRow>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/passport"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-    </TableLayout>
+                <HorizontalScrollView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
 
-    <TextView
-        android:id="@+id/contacts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/photo"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/contacts"
-        android:textSize="25sp" />
+                    <TextView
+                        android:id="@+id/passport_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
 
-    <TableLayout
-        android:id="@+id/table_contacts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/contacts"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/email"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <HorizontalScrollView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
+            <TableRow>
 
                 <TextView
-                    android:id="@+id/email_value"
+                    android:id="@+id/snils"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/standart"
-                    android:textSize="20sp" />
-            </HorizontalScrollView>
-        </TableRow>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/snils"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        <TableRow>
+                <HorizontalScrollView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
 
-            <TextView
-                android:id="@+id/phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/phone"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/snils_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
 
-            <HorizontalScrollView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/photo"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/contacts"
+            android:textSize="25sp" />
+
+        <TableLayout
+            android:id="@+id/table_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contacts"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <TableRow android:layout_width="100dp">
 
                 <TextView
-                    android:id="@+id/phone_value"
+                    android:id="@+id/email"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/standart"
-                    android:textSize="20sp" />
-            </HorizontalScrollView>
-        </TableRow>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/email"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        <TableRow>
+                <HorizontalScrollView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
 
-            <TextView
-                android:id="@+id/address_doc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/address_doc"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/email_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
 
-            <HorizontalScrollView
-                android:layout_width="290dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
+            <TableRow android:layout_width="100dp">
 
                 <TextView
-                    android:id="@+id/address_doc_value"
+                    android:id="@+id/phone"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:minLines="1"
-                    android:text="@string/standart"
-                    android:textSize="20sp" />
-            </HorizontalScrollView>
-        </TableRow>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/phone"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        <TableRow>
+                <HorizontalScrollView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
 
-            <TextView
-                android:id="@+id/address_real"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/address_real"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/phone_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
 
-            <HorizontalScrollView
-                android:layout_width="290dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp">
+            <TableRow android:layout_width="100dp">
 
                 <TextView
-                    android:id="@+id/address_real_value"
+                    android:id="@+id/address_doc"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/address_doc"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:minLines="2"
-                    android:text="@string/standart"
-                    android:textSize="20sp" />
-            </HorizontalScrollView>
-        </TableRow>
-    </TableLayout>
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
 
-    <TextView
-        android:id="@+id/work"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/table_contacts"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/work"
-        android:textSize="25sp" />
+                    <TextView
+                        android:id="@+id/address_doc_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:minLines="1"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="100dp">
+
+                <TextView
+                    android:id="@+id/address_real"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/address_real"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/address_real_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:minLines="2"
+                        android:text="@string/standart"
+                        android:textSize="20sp" />
+                </HorizontalScrollView>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/table_contacts"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/work"
+            android:textSize="25sp" />
 
 
-    <TableLayout
-        android:id="@+id/table_work"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/work"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
-        <!--Таблицу нужно сгенирировать программно-->
-    </TableLayout>
+        <TableLayout
+            android:id="@+id/table_work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/work"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+            <!--Таблицу нужно сгенирировать программно-->
+        </TableLayout>
 
-    <TextView
-        android:id="@+id/family"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/table_work"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/family"
-        android:textSize="25sp" />
+        <TextView
+            android:id="@+id/family"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/table_work"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/family"
+            android:textSize="25sp" />
 
-    <TableLayout
-        android:id="@+id/table_family"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/work"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
-        <!--Таблицу нужно сгенирировать программно-->
-    </TableLayout>
+        <TableLayout
+            android:id="@+id/table_family"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/family"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+            <!--Таблицу нужно сгенирировать программно-->
+        </TableLayout>
     </RelativeLayout>
 
 </ScrollView>

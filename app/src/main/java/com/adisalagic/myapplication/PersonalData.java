@@ -34,6 +34,10 @@ public class PersonalData {
 	private
 	String snils;
 
+	@SerializedName("Телефон")
+	@Expose
+	private
+	String phone;
 
 	@SerializedName("Email")
 	@Expose
@@ -121,6 +125,19 @@ public class PersonalData {
 	private
 	String familyMother;
 
+
+	@SerializedName("Брат")
+	@Expose
+	private
+	String familyBrother;
+
+	public String getFamilyBrother() {
+		return familyBrother;
+	}
+
+	public void setFamilyBrother(String familyBrother) {
+		this.familyBrother = familyBrother;
+	}
 
 	public String getImageUrl() {
 		return imageUrl;
@@ -297,4 +314,13 @@ public class PersonalData {
 	public void setFamilyMother(String familyMother) {
 		this.familyMother = familyMother;
 	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 }
+

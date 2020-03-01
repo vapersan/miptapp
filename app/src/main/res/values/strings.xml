@@ -7,9 +7,11 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Main</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home">Основная ифнормация</string>
+    <string name="menu_gallery">----</string>
+    <string name="menu_slideshow">----</string>
+    <string name="table">Расписание</string>
+    <string name="resend">Пересдачи</string>
 
     <!--Информация о пользователе-->
     <string name="general">Основная информация</string>

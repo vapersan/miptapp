@@ -4,18 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.adisalagic.myapplication.FragmentTableLessons;
-import com.adisalagic.myapplication.Lesson;
 import com.adisalagic.myapplication.MainActivity;
 import com.adisalagic.myapplication.R;
-import com.adisalagic.myapplication.TimeService;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -54,6 +49,10 @@ public class TableView extends AppCompatActivity {
 				}
 			}
 		}).start();
+
+		assert getSupportActionBar() != null;   //null check
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setTitle("Расписание");
 	}
 
 	@Override
@@ -70,6 +69,7 @@ public class TableView extends AppCompatActivity {
 //				new Lesson(2, "Английский язык", new TimeService(12, 0), new TimeService(12, 40),
 //						"Любимый перпод", "321 к2")));
 //		transaction.add(view.getId(), lessons, "Tag").commit();
+//		Не работает, исправьте
 	}
 
 	@Override
@@ -78,5 +78,11 @@ public class TableView extends AppCompatActivity {
 		Intent intent = new Intent();
 		intent.setClass(view.getContext(), MainActivity.class);
 		startActivity(intent);
+	}
+
+	@Override
+	public boolean onSupportNavigateUp() {
+		onBackPressed();
+		return super.onSupportNavigateUp();
 	}
 }

@@ -141,7 +141,7 @@
                     android:textSize="20sp" />
 
                 <HorizontalScrollView
-                    android:layout_width="162dp"
+                    android:layout_width="140dp"
                     android:paddingEnd="1dp">
 
                     <TextView
@@ -169,7 +169,7 @@
                     android:textSize="20sp" />
 
                 <HorizontalScrollView
-                    android:layout_width="162dp"
+                    android:layout_width="100dp"
                     android:paddingEnd="1dp">
 
                     <TextView
@@ -197,7 +197,7 @@
                     android:textSize="20sp" />
 
                 <HorizontalScrollView
-                    android:layout_width="162dp"
+                    android:layout_width="100dp"
                     android:paddingEnd="1dp">
 
                     <TextView
@@ -225,7 +225,7 @@
                     android:textSize="20sp" />
 
                 <HorizontalScrollView
-                    android:layout_width="162dp"
+                    android:layout_width="100dp"
                     android:paddingEnd="1dp">
 
                     <TextView
@@ -253,7 +253,7 @@
                     android:textSize="20sp" />
 
                 <HorizontalScrollView
-                    android:layout_width="162dp"
+                    android:layout_width="100dp"
                     android:paddingEnd="1dp">
 
                     <TextView
@@ -282,7 +282,7 @@
                     android:textSize="20sp" />
 
                 <HorizontalScrollView
-                    android:layout_width="162dp"
+                    android:layout_width="100dp"
                     android:paddingEnd="1dp">
 
                     <TextView
@@ -316,7 +316,7 @@
                     android:textSize="20sp" />
 
                 <HorizontalScrollView
-                    android:layout_width="162dp"
+                    android:layout_width="100dp"
                     android:paddingEnd="1dp">
 
                     <TextView
@@ -411,13 +411,6 @@
             </TableRow>
         </TableLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/table_nir"
-            android:onClick="onTableClick"
-            android:text="Посмотреть расписание"
-            />
 
     </RelativeLayout>
 </ScrollView>

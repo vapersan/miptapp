@@ -2,6 +2,7 @@ package com.adisalagic.myapplication;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,8 +40,7 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-	private AppBarConfiguration mAppBarConfiguration;
-
+	private             AppBarConfiguration mAppBarConfiguration;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,49 +50,87 @@ public class MainActivity extends AppCompatActivity {
 		Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 		FloatingActionButton fab = findViewById(R.id.fab);
-//		fab.setOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View view) {
-//				AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-//				View                dView   = getLayoutInflater().inflate(R.layout.dialog_feedback, null, false);
-//				builder.setView(dView);
-//				Button         button   = dView.findViewById(R.id.sender);
-//				final EditText editText = dView.findViewById(R.id.text);
-//				final Dialog   dialog   = builder.create();
-//				button.setOnClickListener(new View.OnClickListener() {
-//					@Override
-//					public void onClick(final View v) {
-//						AsyncTask.execute(new Runnable() {
-//							@Override
-//							public void run() {
-//								OkHttpClient client = new OkHttpClient();
-//								RequestBody body = new MultipartBody.Builder()
-//										.addFormDataPart("text", editText.getText().toString())
-//										.build();
-//								Request request = new Request.Builder()
-//										.url("https://dragonica-mercy.online/api/feedback")
-//										.post(body)
-//										.build();
-//								try {
-//									Response response = client.newCall(request).execute();
-//									if (response.code() == 200) {
-//										Snackbar.make(v.getRootView(), "Успешно", Snackbar.LENGTH_LONG);
-//									}else {
-//										Snackbar.make(v.getRootView(), "Неудача!", Snackbar.LENGTH_LONG);
-//									}
-//									dialog.dismiss();
-//								} catch (Exception e) {
-//								}
-//							}
-//						});
-//
-//					}
-//				});
-//				dialog.show();
-//			}
-//		});
-		DrawerLayout   drawer         = findViewById(R.id.drawer_layout);
-		NavigationView navigationView = findViewById(R.id.nav_view);
+		fab.setBackgroundResource(R.color.colorPrimary);
+		fab.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+				View                dView   = getLayoutInflater().inflate(R.layout.dialog_feedback, null, false);
+				builder.setView(dView);
+				final Button   button   = dView.findViewById(R.id.sender);
+				final EditText editText = dView.findViewById(R.id.text);
+				final Dialog   dialog   = builder.create();
+				final int[]    code     = {-1};
+				button.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(final View v) {
+						AsyncTask.execute(new Runnable() {
+							@Override
+							public void run() {
+								OkHttpClient client = new OkHttpClient().newBuilder()
+										.build();
+								MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+								RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
+										.addFormDataPart("text", editText.getText().toString())
+										.addFormDataPart("rate", "0")
+										.addFormDataPart("status", "0")
+										.build();
+								Request request = new Request.Builder()
+										.url("https://dragonica-mercy.online/api/feedback/")
+										.method("POST", body)
+										.addHeader("Content-Type", "application/x-www-form-urlencoded")
+										.build();
+								try {
+									Response response = client.newCall(request).execute();
+									code[0] = response.code();
+									dialog.dismiss();
+								} catch (Exception e) {
+									Log.i("POST", e.getMessage());
+								}
+								button.post(new Runnable() {
+									@Override
+									public void run() {
+										if (code[0] == 200 || code[0] == 201) {
+											Toast.makeText(v.getContext(), "Успешно", Toast.LENGTH_LONG).show();
+										} else {
+											Toast.makeText(v.getContext(), "Неудачно!", Toast.LENGTH_LONG).show();
+										}
+									}
+								});
+							}
+						});
+
+					}
+				});
+				dialog.show();
+			}
+		});
+		DrawerLayout         drawer         = findViewById(R.id.drawer_layout);
+		final NavigationView navigationView = findViewById(R.id.nav_view);
+		final PersonalData[] personalData   = new PersonalData[1];
+		AsyncTask.execute(new Runnable() {
+			@Override
+			public void run() {
+				Bitmap bitmap = null;
+				personalData[0] = UserInfo.getData();
+				if (personalData[0] != null) {
+					bitmap = UserInfo.getBitmapFromURL(personalData[0].getImageUrl());
+					bitmap = Bitmap.createBitmap(bitmap, 0, 0, 150, 150);
+				}
+				final Bitmap finalBitmap = bitmap;
+				navigationView.getHeaderView(0).post(new Runnable() {
+					@Override
+					public void run() {
+						ImageView image = navigationView.findViewById(R.id.imageView);
+						image.setImageBitmap(finalBitmap);
+						TextView textView = navigationView.findViewById(R.id.name);
+						textView.setText(personalData[0].getName());
+						TextView email = navigationView.findViewById(R.id.email);
+						email.setText(personalData[0].getEmail());
+					}
+				});
+			}
+		});
 		navigationView.getHeaderView(0).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -102,7 +141,10 @@ public class MainActivity extends AppCompatActivity {
 		// Passing each menu ID as a set of Ids because each
 		// menu should be considered as top level destinations.
 		mAppBarConfiguration = new AppBarConfiguration.Builder(
-				R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_table_view,
+				R.id.nav_home,
+//				R.id.nav_gallery,
+//				R.id.nav_slideshow,
+				R.id.nav_table_view,
 				R.id.nav_resend_view
 		)
 				.setDrawerLayout(drawer)
